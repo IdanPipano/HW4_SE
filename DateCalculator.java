@@ -17,11 +17,17 @@ public class DateCalculator {
     }
 
     public static Date addToDatePositive(Date date, int num) {
+        if (num == 0){
+            return date;
+        }
         return date;
         // TODO: Add your code here...
     }
 
     public static Date addToDateNegative(Date date, int num) {
+        if (num == 0){
+            return date;
+        }
         return date;
         // TODO: Add your code here...
     }
