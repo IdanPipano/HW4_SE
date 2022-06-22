@@ -1,5 +1,10 @@
 import java.net.StandardSocketOptions;
 
+
+// defines
+// notes
+// array define?
+
 public class Main {
     public static void main(String[] args) {
         Date d = new Date(5, 11, 3);

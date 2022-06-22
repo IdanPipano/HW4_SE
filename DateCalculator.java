@@ -4,7 +4,7 @@ public class DateCalculator {
     private static final int DAYS_IN_STANDARD_YEAR = 365;
     private static final int[] DAYS_IN_STANDARD_MONTH = new int[]{
             31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-    }; // entry j is how many days are in month j. for February we'll check separately.
+    }; // entry j is how many days are in month j in standard year
 
     public static Date addToDate(Date date, int num) {
         if (num == 0)
@@ -65,9 +65,9 @@ public class DateCalculator {
      */
     public static int howManyDaysInMonth(int month, int year){
         if (month == FEBRUARY && isLeapYear(year)) {
-            return DAYS_IN_STANDARD_MONTH[month-1] + 1;
+            return DAYS_IN_STANDARD_MONTH[month - 1] + 1;
         }
-        return DAYS_IN_STANDARD_MONTH[month-1];
+        return DAYS_IN_STANDARD_MONTH[month - 1];
     }
 
     /**
