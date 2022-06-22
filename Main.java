@@ -2,8 +2,8 @@ import java.net.StandardSocketOptions;
 
 public class Main {
     public static void main(String[] args) {
-        Date d = new Date(5, 2, 2004);
-        System.out.println(DateCalculator.daysUntilYearStart(d));
+        Date d = new Date(5, 11, 3);
+        System.out.println(DateCalculator.daysLeftInMonth(d));
         // testPartA();
         // testPartB();
     }
