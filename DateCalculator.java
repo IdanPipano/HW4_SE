@@ -20,7 +20,7 @@ public class DateCalculator {
 
     private int daysUntilYearStart(Date date){
         int month = date.getMonth();
-        int sumDays = howManyDaysInMonth(month, date.getYear()) - daysLeftInMonth(date) - 1;
+        int sumDays = date.getDay();
         for (int i = month - 1; i > 0; --i){
             sumDays += howManyDaysInMonth(i, date.getYear());
         }
