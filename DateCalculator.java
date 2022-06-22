@@ -11,8 +11,8 @@ public class DateCalculator {
     }
 
     /**
-     * Returns the number of days from the current date (excluding) to the last
-     * @param date
+     * Returns the number of days from the current date (excluding) to the last day in the current month (including).
+     * @param date (Date) the date we want to find how many
      * @return
      */
     private int daysLeftInMonth(Date date){
