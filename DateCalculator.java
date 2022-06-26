@@ -2,11 +2,32 @@ public class DateCalculator {
 
     private static final int FEBRUARY = 2;
     private static final int DAYS_IN_STANDARD_YEAR = 365;
-    private static final int[] DAYS_IN_MONTH = new int[]{
-            31, -1, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-    }; // entry j is how many days are in month j. for February we'll check separately.
+    private static final int[] DAYS_IN_STANDARD_MONTH = new int[]{
+            31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    }; // entry j is how many days are in month j in standard year
 
     public static Date addToDate(Date date, int num) {
+        if (num == 0)
+            return date;
+        else if (num > 0)
+            return addToDatePositive(date, num);
+        else
+            return addToDateNegative(date, -num);
+        // TODO: Add your code here...
+    }
+
+    public static Date addToDatePositive(Date date, int num) {
+        if (num == 0){
+            return date;
+        }
+        return date;
+        // TODO: Add your code here...
+    }
+
+    public static Date addToDateNegative(Date date, int num) {
+        if (num == 0){
+            return date;
+        }
         return date;
         // TODO: Add your code here...
     }
@@ -32,6 +53,10 @@ public class DateCalculator {
         return howManyDaysInMonth(date.getMonth(), date.getYear()) - date.getDay();
     }
 
+    public static int daysPasseMonth(Date date) {
+        return date.getMonth() - 1;
+    }
+
     /**
      * Returns the number of days the current month has in the current year.
      * @param month
@@ -39,10 +64,10 @@ public class DateCalculator {
      * @return
      */
     public static int howManyDaysInMonth(int month, int year){
-        if (month == FEBRUARY) {
-            return isLeapYear(year) ? 29 : 28;
+        if (month == FEBRUARY && isLeapYear(year)) {
+            return DAYS_IN_STANDARD_MONTH[month - 1] + 1;
         }
-        return DAYS_IN_MONTH[month-1];
+        return DAYS_IN_STANDARD_MONTH[month - 1];
     }
 
     /**
