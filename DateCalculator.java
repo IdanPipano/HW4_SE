@@ -13,25 +13,43 @@ public class DateCalculator {
             return addToDatePositive(date, num);
         else
             return addToDateNegative(date, -num);
-        // TODO: Add your code here...
+
     }
 
     public static Date addToDatePositive(Date date, int num) {
-        if (num == 0){
-            return date;
+        if (num == 0) return date;
+        int daysUntilYearEnd = daysUntilYearEnd(date);
+        if (daysUntilYearEnd < num){
+            return addToDatePositive(new Date(1,1, date.getYear() + 1), num - 1 - daysUntilYearEnd);
         }
-        return date;
+        // the following line is merely for readability
+        if (daysUntilYearEnd == num) return new Date(31, 12, date.getYear());
+        // if we reached here, num < daysUntilYearEnd
+        int daysLeftInMonth = daysLeftInMonth(date);
+        if (daysLeftInMonth < num){
+            return addToDatePositive(new Date(1, date.getMonth() + 1, date.getYear()), num - 1 - daysLeftInMonth);
+        }
+        return new Date(date.getDay() + num, date.getMonth(), date.getYear());
+
+
         // TODO: Add your code here...
     }
 
     public static Date addToDateNegative(Date date, int num) {
-        if (num == 0){
-            return date;
-        }
-        return date;
-        // TODO: Add your code here...
+        if (num == 0) return date;
+        int daysUntilYearStart = daysUntilYearStart(date);
+        if (num > daysUntilYearStart)
+            return addToDateNegative(new Date(31, 12, date.getYear() - 1),
+                    num + 1 + daysUntilYearStart);
+
+        if
     }
 
+    /**
+     * Returns the days from the given date (excluding) to the first day of the last year (including).
+     * @param date
+     * @return
+     */
     public static int daysUntilYearEnd(Date date){
         int sumDays = daysLeftInMonth(date);
         for (int i = date.getMonth() + 1; i <= 12; ++i){

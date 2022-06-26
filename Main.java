@@ -7,8 +7,8 @@ import java.net.StandardSocketOptions;
 
 public class Main {
     public static void main(String[] args) {
-        Date d = new Date(5, 11, 3);
-        System.out.println(DateCalculator.daysLeftInMonth(d));
+        Date d = new Date(2, 1, 2022);
+        System.out.println(DateCalculator.daysUntilYearStart(d));
         // testPartA();
         // testPartB();
     }
