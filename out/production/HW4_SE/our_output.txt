@@ -28,3 +28,23 @@ Level with most occurrences of 5: 3
 Level with most occurrences of 6: -1
 Level with most occurrences of 2: 2
 
+Testing part B...
+Iteration 1, Counter = 200000
+Exception in thread "Thread-3" IllegalReleaseAttempt
+	at MyReentrantLock.release(MyReentrantLock.java:37)
+	at TryWithResourcesAcquireWorker.lockAndIncrement(Main.java:160)
+	at Worker.run(Main.java:122)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Iteration 2, Counter = 100543
+Exception in thread "Thread-5" IllegalReleaseAttempt
+	at MyReentrantLock.release(MyReentrantLock.java:37)
+	at TryWithResourcesAcquireWorker.lockAndIncrement(Main.java:160)
+	at Worker.run(Main.java:122)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Iteration 3, Counter = 100002
+Exception in thread "Thread-7" IllegalReleaseAttempt
+	at MyReentrantLock.release(MyReentrantLock.java:37)
+	at TryWithResourcesAcquireWorker.lockAndIncrement(Main.java:160)
+	at Worker.run(Main.java:122)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Iteration 4, Counter = 100021
