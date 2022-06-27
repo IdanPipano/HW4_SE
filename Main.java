@@ -7,40 +7,38 @@ import java.net.StandardSocketOptions;
 
 public class Main {
     public static void main(String[] args) {
-        Date d = new Date(2, 1, 2022);
-        System.out.println(DateCalculator.daysUntilYearStart(d));
-        // testPartA();
+        testPartA();
         // testPartB();
     }
-//
-//    private static void testPartA() {
-//        System.out.println("Testing part A...");
-//        testPartA1();
-//        testPartA2();
-//    }
-//
-//    private static void testPartA1() {
-//        System.out.println("Testing part A1...");
-//        Date[] dates = {new Date(16, 6, 2022), new Date(1, 1, 10), new Date(5, 5, 555)};
-//        int[] nums = {0, 1, -1, 100, -200, -12350, 21030};
-//
-//        for (Date date : dates) {
-//            for (int num : nums) {
-//                testAddToDate(date, num);
-//            }
-//        }
-//
-//        System.out.println();
-//    }
-//
-//    private static void testAddToDate(Date date, int num) {
-//        Date result = DateCalculator.addToDate(date, num);
-//        if (num >= 0) {
-//            System.out.println("Adding " + num + " to " + date + " result: " + result);
-//        } else {
-//            System.out.println("Subtracting " + -num + " from " + date + " result: " + result);
-//        }
-//    }
+
+    private static void testPartA() {
+        System.out.println("Testing part A...");
+        testPartA1();
+        //testPartA2();
+    }
+
+    private static void testPartA1() {
+        System.out.println("Testing part A1...");
+        Date[] dates = {new Date(16, 6, 2022), new Date(1, 1, 10), new Date(5, 5, 555)};
+        int[] nums = {0, 1, -1, 100, -200, -12350, 21030};
+
+        for (Date date : dates) {
+            for (int num : nums) {
+                testAddToDate(date, num);
+            }
+        }
+
+        System.out.println();
+    }
+
+    private static void testAddToDate(Date date, int num) {
+        Date result = DateCalculator.addToDate(date, num);
+        if (num >= 0) {
+            System.out.println("Adding " + num + " to " + date + " result: " + result);
+        } else {
+            System.out.println("Subtracting " + -num + " from " + date + " result: " + result);
+        }
+    }
 //
 //    private static void testPartA2() {
 //        System.out.println("Testing part A2...");

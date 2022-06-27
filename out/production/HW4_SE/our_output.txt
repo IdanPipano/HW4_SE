@@ -1,1 +1,25 @@
-56
+30
+Testing part A...
+Testing part A1...
+Adding 0 to 16.06.2022 result: 16.06.2022
+Adding 1 to 16.06.2022 result: 17.06.2022
+Subtracting 1 from 16.06.2022 result: 15.06.2022
+Adding 100 to 16.06.2022 result: 24.09.2022
+Subtracting 200 from 16.06.2022 result: 28.11.2021
+Subtracting 12350 from 16.06.2022 result: 23.08.1988
+Adding 21030 to 16.06.2022 result: 13.01.2080
+Adding 0 to 01.01.10 result: 01.01.10
+Adding 1 to 01.01.10 result: 02.01.10
+Subtracting 1 from 01.01.10 result: 31.12.9
+Adding 100 to 01.01.10 result: 11.04.10
+Subtracting 200 from 01.01.10 result: 15.06.9
+Subtracting 12350 from 01.01.10 result: 10.03.-24
+Adding 21030 to 01.01.10 result: 31.07.67
+Adding 0 to 05.05.555 result: 05.05.555
+Adding 1 to 05.05.555 result: 06.05.555
+Subtracting 1 from 05.05.555 result: 04.05.555
+Adding 100 to 05.05.555 result: 13.08.555
+Subtracting 200 from 05.05.555 result: 17.10.554
+Subtracting 12350 from 05.05.555 result: 12.07.521
+Adding 21030 to 05.05.555 result: 02.12.612
+
