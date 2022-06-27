@@ -89,6 +89,9 @@ public class MyReentrantLock implements Lock, AutoCloseable{
      */
     @Override
     public void close() {
+        if(this.timesLocked == 0 || !Thread.currentThread().equals(this.currentThread)){
+            throw new IllegalReleaseAttempt("Can't release");
+        }
         this.timesLocked = 0;
         this.currentThread = null;
         this.atomicBooleanLocked.set(false);

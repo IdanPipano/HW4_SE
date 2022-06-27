@@ -1,6 +1,7 @@
 
 // notes
 // array define?
+// check close
 
 public class Main {
     public static void main(String[] args) {
