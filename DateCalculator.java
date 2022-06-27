@@ -9,7 +9,7 @@ public class DateCalculator {
     private static final int FEBRUARY = 2;
     private static final int DECEMBER = 12;
     private static final int DAYS_IN_STANDARD_YEAR = 365; //STANDARD meaning not a leap year
-    private static final int[] DAYS_IN_STANDARD_MONTH = new int[]{
+    private static final int[] DAYS_IN_STANDARD_MONTH = {
             31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
     }; // entry j is how many days there are in month j+1 in a standard year
 
@@ -17,7 +17,7 @@ public class DateCalculator {
     /**
      * This function gets a Date and an integer num. It calculates and returns the date num days from
      * the given date. If num < 0, calculates the date |num| days before the given date.
-     * @param date (Date) the given date)
+     * @param date (Date) the given date
      * @param num (int) the number of days (can be positive, 0 or negative).
      * @return (Date) the date num days from the given date.
      */
@@ -70,7 +70,7 @@ public class DateCalculator {
             return addToDateNegative(new Date(31, DECEMBER, year - 1),
                     num + 1 + daysUntilYearStart);
 
-        // if we reached here, num in absolute value is <= daysUnilYearStart
+        // if we reached here, num in absolute value is <= daysUntilYearStart
         if ((-1)*num > day) //if we reach here, month is > 1 (it is not January)..
             return addToDateNegative(new Date(howManyDaysInMonth(month-1, year), month - 1, year), num + day);
         return new Date(day + num, month, year);
