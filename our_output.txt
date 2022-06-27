@@ -1,4 +1,3 @@
-30
 Testing part A...
 Testing part A1...
 Adding 0 to 16.06.2022 result: 16.06.2022
@@ -22,4 +21,10 @@ Adding 100 to 05.05.555 result: 13.08.555
 Subtracting 200 from 05.05.555 result: 17.10.554
 Subtracting 12350 from 05.05.555 result: 12.07.521
 Adding 21030 to 05.05.555 result: 02.12.612
+
+Testing part A2...
+Level with most occurrences of 7: 1
+Level with most occurrences of 5: 3
+Level with most occurrences of 6: -1
+Level with most occurrences of 2: 2
 

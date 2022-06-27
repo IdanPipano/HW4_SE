@@ -14,7 +14,7 @@ public class Main {
     private static void testPartA() {
         System.out.println("Testing part A...");
         testPartA1();
-        //testPartA2();
+        testPartA2();
     }
 
     private static void testPartA1() {
@@ -39,20 +39,20 @@ public class Main {
             System.out.println("Subtracting " + -num + " from " + date + " result: " + result);
         }
     }
-//
-//    private static void testPartA2() {
-//        System.out.println("Testing part A2...");
-//        BinNode<Integer> root = new BinNode<>(5);
-//        root.setLeft(new BinNode<>(7));
-//        root.setRight(new BinNode<>(3));
-//        root.getLeft().setLeft(new BinNode<>(7, new BinNode<>(5), null));
-//        root.getLeft().setRight(new BinNode<>(2, new BinNode<>(9), new BinNode<>(5)));
-//        System.out.println("Level with most occurrences of 7: " + LevelMostOccurrences.getLevelWithMostOccurrences(root, 7));
-//        System.out.println("Level with most occurrences of 5: " + LevelMostOccurrences.getLevelWithMostOccurrences(root, 5));
-//        System.out.println("Level with most occurrences of 6: " + LevelMostOccurrences.getLevelWithMostOccurrences(root, 6));
-//        System.out.println("Level with most occurrences of 2: " + LevelMostOccurrences.getLevelWithMostOccurrences(root, 2));
-//        System.out.println();
-//    }
+
+    private static void testPartA2() {
+        System.out.println("Testing part A2...");
+        BinNode<Integer> root = new BinNode<>(5);
+        root.setLeft(new BinNode<>(7));
+        root.setRight(new BinNode<>(3));
+        root.getLeft().setLeft(new BinNode<>(7, new BinNode<>(5), null));
+        root.getLeft().setRight(new BinNode<>(2, new BinNode<>(9), new BinNode<>(5)));
+        System.out.println("Level with most occurrences of 7: " + LevelMostOccurrences.getLevelWithMostOccurrences(root, 7));
+        System.out.println("Level with most occurrences of 5: " + LevelMostOccurrences.getLevelWithMostOccurrences(root, 5));
+        System.out.println("Level with most occurrences of 6: " + LevelMostOccurrences.getLevelWithMostOccurrences(root, 6));
+        System.out.println("Level with most occurrences of 2: " + LevelMostOccurrences.getLevelWithMostOccurrences(root, 2));
+        System.out.println();
+    }
 //
 //    private static void testPartB() {
 //        System.out.println("Testing part B...");
