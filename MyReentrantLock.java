@@ -8,9 +8,9 @@ public class MyReentrantLock implements Lock, AutoCloseable{
     private Thread currentThread;
 
     public MyReentrantLock(){
-        timesLocked = 0;
-        atomicBooleanLocked = new AtomicBoolean(false);
-        currentThread = null;
+        this.timesLocked = 0;
+        this.atomicBooleanLocked = new AtomicBoolean(false);
+        this.currentThread = null;
     }
 
     @Override
@@ -22,10 +22,10 @@ public class MyReentrantLock implements Lock, AutoCloseable{
 
     @Override
     public boolean tryAcquire() {
-        if (Thread.currentThread().equals(currentThread) ||
-                atomicBooleanLocked.compareAndSet(false, true)){
-            currentThread = Thread.currentThread();
-            timesLocked++;
+        if (Thread.currentThread().equals(this.currentThread) ||
+                this.atomicBooleanLocked.compareAndSet(false, true)){
+            this.currentThread = Thread.currentThread();
+            this.timesLocked++;
             return true;
         }
         return false;
@@ -33,13 +33,13 @@ public class MyReentrantLock implements Lock, AutoCloseable{
 
     @Override
     public void release() {
-        if(timesLocked == 0 || Thread.currentThread().equals(currentThread)){
+        if(this.timesLocked == 0 || !Thread.currentThread().equals(this.currentThread)){
             throw new IllegalReleaseAttempt("Can't release");
         }
-        timesLocked--;
-        if (timesLocked == 0){
-            atomicBooleanLocked.set(false);
-            currentThread = null;
+        this.timesLocked--;
+        if (this.timesLocked == 0){
+            this.currentThread = null;
+            this.atomicBooleanLocked.set(false);
         }
     }
 
@@ -89,8 +89,8 @@ public class MyReentrantLock implements Lock, AutoCloseable{
      */
     @Override
     public void close() {
-        timesLocked = 0;
-        atomicBooleanLocked.set(false);
-        currentThread = null;
+        this.timesLocked = 0;
+        this.currentThread = null;
+        this.atomicBooleanLocked.set(false);
     }
 }
