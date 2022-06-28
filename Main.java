@@ -3,6 +3,8 @@
 // array define?
 // check close
 // organize
+// ijknljjhvj
+// Reentrancy note in acquire and try
 
 public class Main {
     public static void main(String[] args) {

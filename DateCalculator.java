@@ -8,10 +8,10 @@ public class DateCalculator {
 
     private static final int FEBRUARY = 2;
     private static final int DECEMBER = 12;
-    private static final int DAYS_IN_STANDARD_YEAR = 365; //STANDARD meaning not a leap year
+    private static final int DAYS_IN_STANDARD_YEAR = 365; // STANDARD meaning not a leap year
     private static final int[] DAYS_IN_STANDARD_MONTH = {
             31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-    }; // entry j is how many days there are in month j+1 in a standard year
+    }; // entry j is how many days there are in month j + 1 in a standard year
 
 
     /**
@@ -71,8 +71,9 @@ public class DateCalculator {
                     num + 1 + daysUntilYearStart);
 
         // if we reached here, num in absolute value is <= daysUntilYearStart
-        if ((-1)*num > day) //if we reach here, month is > 1 (it is not January)..
-            return addToDateNegative(new Date(howManyDaysInMonth(month-1, year), month - 1, year), num + day);
+        if ((-1) * num > day) //if we reach here, month is > 1 (it is not January)..
+            return addToDateNegative(new Date(howManyDaysInMonth(month - 1, year),
+                    month - 1, year), num + day);
         return new Date(day + num, month, year);
     }
 
