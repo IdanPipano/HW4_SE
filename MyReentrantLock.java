@@ -3,14 +3,16 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Thread;
 
 public class MyReentrantLock implements Lock, AutoCloseable{
+
     private int timesLocked;
-    private final AtomicBoolean atomicBooleanLocked;
     private Thread currentThread;
+    private final AtomicBoolean atomicBooleanLocked;
+
 
     public MyReentrantLock(){
         this.timesLocked = 0;
-        this.atomicBooleanLocked = new AtomicBoolean(false);
         this.currentThread = null;
+        this.atomicBooleanLocked = new AtomicBoolean(false);
     }
 
     @Override
@@ -89,6 +91,9 @@ public class MyReentrantLock implements Lock, AutoCloseable{
      */
     @Override
     public void close() {
+        if(this.timesLocked == 0 || !Thread.currentThread().equals(this.currentThread)){
+            throw new IllegalReleaseAttempt("Can't release");
+        }
         this.timesLocked = 0;
         this.currentThread = null;
         this.atomicBooleanLocked.set(false);
