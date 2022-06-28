@@ -1,7 +1,20 @@
 import java.util.ArrayDeque;
 
+/**
+ * ijknljjhvj
+ */
 public class LevelMostOccurrences {
 
+
+    /**
+     * This function takes the root of a binary tree of integers and an integer, and return the
+     * level number in the tree where the number obtained appears most often. If there is several
+     * levels with the most occurrences, the function will return the lowest of them.
+     * If the number does not appear at all the function will return -1
+     * @param num
+     * @param node
+     * @return
+     */
     public static int getLevelWithMostOccurrences(BinNode<Integer> node, int num) {
         int max = 0, rowNum = -1, occurrences;
         BinNode<Integer> b;
