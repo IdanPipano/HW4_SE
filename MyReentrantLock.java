@@ -2,7 +2,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.lang.Thread;
 
 /**
- * ijknljjhvj
+ * This class represents an autocloseable who can be reentered by the thread who locked it.
  */
 public class MyReentrantLock implements Lock, AutoCloseable{
 
@@ -12,7 +12,7 @@ public class MyReentrantLock implements Lock, AutoCloseable{
 
 
     /**
-     * Constructs a new open (unlocked) MyReentrantLock object
+     * Constructs a new open (not locked) MyReentrantLock object.
      */
     public MyReentrantLock(){
         this.timesLocked = 0;
@@ -33,8 +33,8 @@ public class MyReentrantLock implements Lock, AutoCloseable{
 
     /**
      * The function tries to lock the MyReentrantLock. If it can be locked the function
-     * lock it and return true. Otherwise, the function returns false.
-     * @return (boolean) whether the MyReentrantLock can be lock, or not
+     * locks it and returns true. Otherwise, the function returns false.
+     * @return (boolean) whether the MyReentrantLock can be locked
      */
     @Override
     public boolean tryAcquire() {

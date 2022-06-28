@@ -131,5 +131,5 @@ Iteration 99, Counter = 200000
 Iteration 100, Counter = 200000
 Cannot release the lock!
 Cannot release the lock!
-Cannot release the lock!3
+Cannot release the lock!
 Locked the lock, now releasing it.
