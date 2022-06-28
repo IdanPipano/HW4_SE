@@ -1,7 +1,7 @@
 import java.util.ArrayDeque;
 
 /**
- * ijknljjhvj
+ * This class is responsible for
  */
 public class LevelMostOccurrences {
 
