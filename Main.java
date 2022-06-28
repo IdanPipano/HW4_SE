@@ -2,6 +2,7 @@
 // notes
 // array define?
 // check close
+// organize
 
 public class Main {
     public static void main(String[] args) {
