@@ -21,8 +21,9 @@ public class MyReentrantLock implements Lock, AutoCloseable{
     }
 
     /**
-     * The function locks the MyReentrantLock. If the MyReentrantLock is locked, the operation waits
-     * until it is released in order to lock it.
+     * The function locks the MyReentrantLock. If the MyReentrantLock is locked by another lock, the operation waits
+     * until it is released in order to lock it. If it was locked by the same thread who now tries to lock it again,
+     * it locks the lock again.
      */
     @Override
     public void acquire() {
@@ -34,6 +35,8 @@ public class MyReentrantLock implements Lock, AutoCloseable{
     /**
      * The function tries to lock the MyReentrantLock. If it can be locked the function
      * locks it and returns true. Otherwise, the function returns false.
+     * If the lock was locked by the same thread who now tries to lock it again,
+     * locks the lock again and return true.
      * @return (boolean) whether the MyReentrantLock can be locked
      */
     @Override
@@ -49,6 +52,7 @@ public class MyReentrantLock implements Lock, AutoCloseable{
 
     /**
      * The function releases the lock of the MyReentrantLock.
+     * If it was locked more than once, releases only one lock.
      * @throws IllegalReleaseAttempt if the MyReentrantLock isn't locked or the
      * current Thread isn't the Thread that locked the MyReentrantLock.
      */
