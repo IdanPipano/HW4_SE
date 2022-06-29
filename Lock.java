@@ -1,3 +1,7 @@
+/**
+ * This interface represents a lock for multithreaded programming.
+ */
+
 public interface Lock extends AutoCloseable {
 
     /**
